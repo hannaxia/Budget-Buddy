@@ -5,7 +5,7 @@ from random import *
 
 root = Tk()
 root.geometry("270x480")
-root.title('BudgetBuddy')
+root.title('Budget Buddy')
 s = Canvas(root, width = 270, height = 480, bg='#ffffff')
 s.pack(fill = BOTH, expand=False)
 
