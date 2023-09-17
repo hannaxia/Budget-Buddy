@@ -69,7 +69,7 @@ def page2():
 	if (35+2*(100 - (totalexpenses/income*100))) <=0:
 		s.delete('all')
 		s.create_rectangle(0,0,270,480,fill='white')
-		s.create_text(135,240,text='You used up all your money!', fill = 'red', font = 'arial 10')
+		s.create_text(135,240,text='You used all your money!', fill = 'red', font = 'arial 10')
 		s.update()
 
 	else:
