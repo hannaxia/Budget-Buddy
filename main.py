@@ -67,7 +67,10 @@ def page2():
 	#progress bar
 	s.create_rectangle(35,85,35+2*100,110, fill='#fff')
 	if (35+2*(100 - (totalexpenses/income*100))) <=0:
-		gameover()
+		s.delete('all')
+		s.create_rectangle(0,0,270,480,fill='white')
+		s.create_text(135,240,text='You used up all your money!', fill = 'red', font = 'arial 10')
+		s.update()
 
 	else:
 		s.create_rectangle(35,85,(35+2*(100 - (totalexpenses/income*100))),110, fill='#80C915')
@@ -85,9 +88,8 @@ def page2():
 			s.create_text(245, 240 + i*50, text = expenses[i], font = 'arial 28', anchor = NE, fill = 'black')
 			s.create_rectangle(35, 290 + i*50,235, 290 + i*50, fill = 'black')
 			doneBtn.destroy()
-	
 	    
-		s.update()
+	s.update()
 	
 	
 def popup():
@@ -133,13 +135,6 @@ def expenseAdd():
 	
 	s.delete('all')
 	page2()
-
-def gameover():
-	global startBtn
-	startBtn.destroy()
-	s.delete('all')
-	s.create_rectangle(0,0,270,480,fill='white')
-	s.create_text(135,240,text='You used up all your money...\nStop spending money!',font='arial 12',fill='red')
 
 home()
 s.update()
